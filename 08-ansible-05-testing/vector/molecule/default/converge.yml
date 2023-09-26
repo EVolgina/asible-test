@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include ev.vector"
+      include_role:
+        name: "ev.vector"
