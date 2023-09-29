@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include evv.clickhouse2"
+      include_role:
+        name: "evv.clickhouse2"

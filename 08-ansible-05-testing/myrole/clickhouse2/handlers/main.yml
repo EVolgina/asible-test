@@ -1,0 +1,7 @@
+---
+# handlers file for clickhouse2
+- name: Start clickhouse service
+  become: true
+  ansible.builtin.service:
+    name: clickhouse-server
+    state: restarted
