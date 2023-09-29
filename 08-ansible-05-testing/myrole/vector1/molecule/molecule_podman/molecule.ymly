@@ -1,0 +1,24 @@
+---
+dependency:
+  name: galaxy
+tasks:
+  - name: vector1
+    include_role:
+      name: "vector1"
+driver:
+  name: podman
+platforms:
+  - name: centos7
+    image: centos:7
+provisioner:
+  name: ansible
+  version: "2.10"
+scenario:
+  name: molecule_podman
+  test_sequence:
+    - destroy
+    - create
+    - converge
+    - destroy
+verifier:
+  name: ansible
