@@ -4,12 +4,12 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: centos8
+  - name: centos
     image: centos:8
     pre_build_image: true
 provisioner:
   name: ansible
-  ansible_ver: "2.10"
+  ansible_ver: ">=2.10,<2.12"
 scenario:
   name: centos8
   test_sequence:
@@ -17,5 +17,9 @@ scenario:
     - create
     - converge
     - destroy
+roles:
+   - role:vector1
+variables:
+   vector_version: 0.32.1-1
 verifier:
   name: ansible

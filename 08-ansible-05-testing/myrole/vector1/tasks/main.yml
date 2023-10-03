@@ -4,7 +4,9 @@
   ansible.builtin.get_url:
     url: "https://packages.timber.io/vector/0.32.1/vector-0.32.1-1.x86_64.rpm"
     dest: "./vector.rpm"
-
+- name: Update package lists
+  ansible.builtin.dnf:
+    update_cache: yes
 - name: Install Vector
   ansible.builtin.yum:
     name: "vector"
@@ -14,7 +16,7 @@
 - name: Create Vector configuration file
   template:
     src: vector_config.j2
-    dest: /home/devops/vector
+    dest: /home/vagrant/mnt-homeworks/08-ansible-05-testing/myrole/vector1/
   become: yes
-  become_user: devops
+  become_user: vagrant
   notify: Restart Vector service

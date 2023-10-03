@@ -1,5 +1,11 @@
 ---
 - hosts: localhost
-  remote_user: root
+  remote_user: vagrant
   roles:
     - vector1
+- hosts: ubuntu_latest
+  gather_facts: yes
+  become: yes
+  become_method: sudo
+  become_user: root
+

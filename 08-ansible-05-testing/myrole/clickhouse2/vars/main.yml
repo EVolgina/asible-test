@@ -1,7 +1,7 @@
 ---
 # vars file for clickhouse2
-
-clickhouse_package:
+clickhouse_version: 23.4.6.25
+clickhouse_packages:
   - clickhouse-client
   - clickhouse-server
   - clickhouse-common-static

@@ -4,10 +4,21 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: instance
-    image: quay.io/centos/centos:stream8
+  - name: centos7
+    image: centos:7
     pre_build_image: true
+  - name: centos8
+    image: centos:8
+  - name: ubuntu_latest
+    image: ubuntu:latest
 provisioner:
   name: ansible
 verifier:
   name: ansible
+  options:
+    variables:
+      clickhouse_packages:
+       - clickhouse-client 
+       - clickhouse-server
+       - clickhouse-common-static
+     clickhouse_version: 23.4.6.25

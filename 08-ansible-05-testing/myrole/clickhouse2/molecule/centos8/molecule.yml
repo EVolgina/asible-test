@@ -17,5 +17,19 @@ platforms:
     pre_build_image: true
 provisioner:
   name: ansible
+scenarios:
+  - name: centos8
+    converge_sequence:
+      - create
+      - converge
+      - check
+    roles:
+      - role: clickhouse2
+    variables:
+      clickhouse_packages:
+        - clickhouse-client
+        - clickhouse-server
+        - clickhouse-common-static
+      clickhouse_version: 23.4.6.25
 verifier:
   name: ansible
