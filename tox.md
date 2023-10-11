@@ -1,4 +1,4 @@
-'''
+```
 vagrant@vagrant:~/mnt-homeworks/08-ansible-05-testing/myrole$ ansible-galaxy role init vector-role
 - Role vector-role was created successfully
 vagrant@vagrant:~/mnt-homeworks/08-ansible-05-testing/myrole$ ls
@@ -121,4 +121,4 @@ py38-ansible30: exit 1 (4.32 seconds) /home/vagrant/mnt-homeworks/08-ansible-05-
   py38-ansible212: FAIL code 1 (3.64=setup[0.15]+cmd[3.49] seconds)
   py38-ansible30: FAIL code 1 (4.39=setup[0.07]+cmd[4.32] seconds)
   evaluation failed :( (8.48 seconds
-'''
+```
